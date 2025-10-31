@@ -7,7 +7,7 @@ Follow the steps below to run the project locally.
 
 ###  Clone the Repository
 ```bash
-git clone https://github.com/your-username/ecom.git
+git clone https://github.com/sumitdevs/mock-ecom.git
 cd ecom
 ```
 ### server Setup
