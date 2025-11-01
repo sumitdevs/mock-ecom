@@ -4,6 +4,14 @@ import { Link, useLocation} from 'react-router-dom';
 
 function Receipt() {
     const { state } = useLocation();
+    function handlePdf() {
+        const byteCharacters = atob(state.pdfBase64);
+        const byteNumbers = Array.from(byteCharacters, char => char.charCodeAt(0));
+        const byteArray = new Uint8Array(byteNumbers);
+        const blob = new Blob([byteArray], { type: "application/pdf" });
+        const pdfUrl = URL.createObjectURL(blob);
+        window.open(pdfUrl, "_blank");
+    }
     return (
         <div className='min-h-[90vh] flex items-center justify-center'>
             <div className='flex flex-col gap-y-4 items-center border max-w-sm p-6 border-gray-200 rounded-xl '>
@@ -18,10 +26,10 @@ function Receipt() {
                     <Home width={14} strokeWidth={1} />
                     Home
                 </Link>
-                <Link to={state.pdfUrl} className='flex gap-x-3 rounded-sm px-4 py-1 bg-yellow-200 hover:bg-amber-300 transition-all divide-neutral-300 items-center justify-center '>
+                <button onClick={handlePdf} className='flex gap-x-3 rounded-sm px-4 py-1 bg-yellow-200 hover:bg-amber-300 transition-all divide-neutral-300 items-center justify-center '>
                     receipt
                     <CloudDownload width={14} strokeWidth={1} />
-                </Link>
+                </button>
             </div>
             </div>
         </div>
