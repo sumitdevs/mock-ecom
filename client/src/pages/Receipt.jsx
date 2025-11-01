@@ -6,7 +6,7 @@ function Receipt() {
     const { state } = useLocation();
     return (
         <div className='min-h-[90vh] flex items-center justify-center'>
-            <div className='flex flex-col gap-y-4 items-center border w-1/4 p-6 border-gray-200 rounded-xl '>
+            <div className='flex flex-col gap-y-4 items-center border max-w-sm p-6 border-gray-200 rounded-xl '>
                 <div className='flex items-center justify-center gap-x-4'>
                     <h2 className='text-3xl'>Order Completed</h2>
                     <span className='h-5 w-5 p-1 mt-1 text-white bg-green-400 rounded-full flex items-center justify-center'>

@@ -73,7 +73,7 @@ function Cart() {
             }
             {
             !cartId &&
-                <div className='flex flex-col gap-y-4 items-center border w-1/4 p-6 border-gray-200 rounded-xl '>
+                <div className='flex flex-col gap-y-4 items-center border max-w-sm p-6 border-gray-200 rounded-xl '>
                     <div className='flex items-center justify-center gap-x-4'>
                         <h2 className='text-3xl'>cart is empty</h2>
                         <span className='h-5 w-5 p-1 mt-1 text-white bg-green-400 rounded-full flex items-center justify-center'>
@@ -101,7 +101,7 @@ function Cart() {
             <ArrowLeft width={16} />
             <span>continue shopping</span>
         </Link>
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-10'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-8'>
             <div className='lg:col-span-2'>
                 <div id="card" className='flex flex-col gap-y-8 border p-6 rounded-xl border-gray-200'>
                     <div id="card-header" className='flex gap-x-2'>
@@ -121,15 +121,15 @@ function Cart() {
                                         <div className='grow flex flex-col gap-y-4'>
                                             <div className='flex justify-between items-center'>
                                                 <div className='max-w-sm'>
-                                                    <h3 className='text-lg font-medium'>{item.productId.name}</h3>
-                                                    <p className='text-sm text-gray-500'>{(item.productId.desc).slice(0,90)}</p>
+                                                    <h3 className='text-base sm:text-lg font-medium'>{item.productId.name}</h3>
+                                                    <p className='text-sm  text-gray-500'>{(item.productId.desc).slice(0,90)}</p>
                                                 </div>
                                                 <div className='text-right'>
                                                     <p className='font-medium text-lg ml-auto'>₹{item.productId.price}</p>
                                                     <p className='text-sm text-gray-500'>₹{(item.productId.price)*(item.quantity)} total</p>
                                                 </div>
                                             </div>
-                                            <div className='flex justify-between'>
+                                            <div className='flex flex-col items-center gap-y-2 sm:flex-row sm:justify-between'>
                                                 <div className='flex items-center gap-x-2'>
                                                     <button  disabled={item.quantity <= 1} onClick= {() => mutation.mutate({ cartId, productId: item.productId._id, quantity: item.quantity - 1, }) } className='border border-gray-200 hover:bg-gray-200 cursor-pointer px-2 py-1 rounded-lg'>
                                                         <Minus width={16} />

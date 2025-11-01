@@ -42,8 +42,8 @@ function Checkout() {
             <ArrowLeft width={16} />
             <span>back to cart</span>
         </Link>
-        <form onSubmit={handleSubmit} className='grid lg:grid-cols-3 gap-x-10'>
-            <div className='col-span-2'>
+        <form onSubmit={handleSubmit} className='grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8'>
+            <div className='md:col-span-2'>
                 <div className='content flex flex-col gap-y-4 border border-gray-200 rounded-xl p-6'>
                     <span className='font-medium'>Shipping Information</span>
                     <div className="flex flex-col">
