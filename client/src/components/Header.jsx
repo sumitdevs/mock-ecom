@@ -6,7 +6,7 @@ import { useCartStore } from "../store/cartStore";
 const Header = () => {
     const {count} = useCartStore();
     return (
-    <header className="w-full sticky top-0 shadow-sm bg-white">
+    <header className="w-full z-20 sticky top-0 shadow-sm bg-white">
     <div className="container flex flex-wrap items-center justify-between py-3">
 
     <Link to="/" className="flex items-center space-x-2">
